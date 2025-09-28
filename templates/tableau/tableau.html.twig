@@ -1,0 +1,17 @@
+<h1> exemple d'un tableau </h1>
+
+<table border="1" width="50%">
+    <tr>
+        <th> valeur 1 </th>
+        <th> valeur 2 </th>
+        <th> valeur 3 </th>
+    </tr>
+
+    <tr>
+    {% for key, value in t %}
+        
+            <td> {{ value }} </td>
+        
+    {% endfor %}
+    </tr>
+</table>

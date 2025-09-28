@@ -1,0 +1,32 @@
+<h1>Liste des auteurs</h1>
+<h1>Les nombres des auteurs : {{ A|length }}</h1>
+
+{% if A is not defined or A is empty %}
+    <h1>Aucun auteur trouvé</h1>
+{% else %}
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Image</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Number of books</th>
+            <th>Details</th>
+        </tr>
+        {% for list in A %}
+            <tr>
+                <td>{{ list.id }}</td>
+                <td>
+                    <img src="{{ list.picture }}" alt="{{ list.username }}" width="100">
+                </td>
+                <td>{{ list.username|upper }}</td>
+                <td>{{ list.email }}</td>
+                <td>{{ list.nb_books }}</td>
+                <td>
+                    <a href="{{ path('app_author_details', {'id': list.id}) }}">Details</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endif %}
