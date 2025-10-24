@@ -1,0 +1,22 @@
+<h1>Les Auteur</h1>
+
+<table border="1">
+    <tr>
+        <th> ID </th>
+        <th> Username</th>
+        <th> Email </th>
+    </tr>
+
+    
+    {% for a in authors %}
+        <tr>
+            <td> {{a.id}} </td>
+            <td> {{a.username | upper }} </td>
+            <td> {{a.email}} </td>
+
+        </tr>
+    {% endfor %}
+    
+</table>
+
+<a href="{{ path('app_listeAuthor') }}">Retour à la liste</a>
